@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>堆糖生活家</title>
+    <link rel="icon" href="http://www.duitang.com/favicon.ico">
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+        }
+        .content .section {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        /*--------page1---------*/
+        .section1 {
+            width: 100%;
+            height: 828px;
+            background: url(img/20160818104645_f5QSv.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        @keyframes moveDown {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+            90% {
+                transform: translateY(15px);
+                opacity: 1;
+            }
+            95% {
+                transform: translateY(15px);
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        /*--------next btn-----*/
+        .tableCell .next-page {
+            /*cursor: pointer;*/
+            position: absolute;
+            width: 40px;
+            bottom: 50px;
+            left: 49%;
+            animation: moveDown 1.6s linear infinite;
+        }
+        /*-------header start--------*/
+        .dt-header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255,255,255,.9);
+        }
+        .dt-header .hd-wrap {
+            width: 1200px;
+            height: 64px;
+            margin: 0 auto;
+        }
+        .hd-wrap .hd-l {
+            width: 80px;
+            height: 64px;
+            float: left;
+            background: url(img/20131224171644_TXGCC.png) 0 12px no-repeat;
+        }
+        .hd-r {
+            float: right;
+        }
+        .hd-r .register {
+            float: right;
+            margin-top: 20px;
+            margin-right: 25px;
+            display: block;
+            width: 52px;
+            height: 28px;
+            color: #fff;
+            font-size: 13px;
+            line-height: 28px;
+            text-align: center;
+            text-decoration: none;
+            background-color: #f46;
+        }
+        .hd-r .vline {
+            float: right;
+            display: block;
+            width: 2px;
+            height: 24px;
+            margin-top: 20px;
+            background-color: #ebebeb;
+        }
+        .hd-r .login {
+            float: right;
+            color: #444;
+            text-decoration: none;
+            font-size: 13px;
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-top: 25px;
+        }
+        /*-------header and--------*/
+
+        .section1 .pg-text {
+            position: absolute;
+            text-align: center;
+            top: 200px;
+            left: 25%;
+
+        }
+        .pg-text .pg-title {
+            padding-top: 66px;
+            padding-bottom: 22px;
+            font-size: 45px;
+            font-weight: 400;
+        }
+        .pg-text .pg-sub-title {
+            padding-bottom: 50px;
+            font-size: 26px;
+            font-weight: 300;
+            color: #777;
+        }
+        .pg-text .login-page {
+            display: block;
+            padding-left: 250px;
+            padding-top: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .pg-text .login-btn {
+            width: 220px;
+            height: 60px;
+            line-height: 60px;
+            font-size: 20px;
+            background-color: #ff7d7c;
+            border-radius: 100px;
+        }
+        /*-----------page2,page3---------*/
+        .section2,
+        .section3 {
+            position: relative;
+            width: 100%;
+            height: 828px;
+            background-color: #fffdf8;
+        }
+        .section2 .pg-cont-wrap {
+            position: absolute;
+            top: 170px;
+            left: 130px;
+            display: block;
+            width: 75%;
+            height: 500px;
+        }
+        @keyframes fadeUpS {
+            0% {
+                display: none;
+                transform: translate3d(0,55px,0);
+                opacity: 0;
+            }
+            100% {
+                display: block;
+                transform: translate3d(0,0,0);
+                opacity: 1;
+            }
+        }
+        .section2 .pg-cont-wrap .pg-mac-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url(img/20160818104653_VsaUu.png) no-repeat;
+            background-size: 720px 480px;
+            animation: fadeUpS 1s linear;
+        }
+        @keyframes slowShow {
+            0% {
+                display: none;
+                opacity: 0;
+            }
+            100% {
+                display: block;
+                opacity: 1;
+            }
+        }
+        .pg-cont-wrap .pg-mac-cont {
+            float: right;
+            margin-top: 70px;
+            animation-name: slowShow;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-delay: .5s;
+            transition-timing-function: linear;
+        }
+        .pg-mac-cont .pg-line-before {
+            width: 42px;
+            height: 2px;
+            background: #000;
+        }
+        .pg-mac-cont .pg-title {
+            font-size: 24px;
+            font-weight: 500;
+            padding: 25px 0 45px;
+        }
+        .pg-mac-cont .pg-content {
+            line-height: 2;
+        }
+        .section3 .pg-cont-wrap {
+            position: absolute;
+            top: 140px;
+            left: 280px;
+            display: block;
+            width: 65%;
+            height: 600px;
+        }
+        .section3 .pg-cont-wrap .pg-mac-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url(img/20160818104651_nRwPk.png) no-repeat;
+            background-size: 430px 550px;
+            animation: fadeUpS 1s linear;
+        }
+        .section3 .pg-cont-wrap .pg-mac-cont {
+            margin-top: 140px;
+            animation-name: slowShow;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-delay: .5s;
+            transition-timing-function: linear;
+        }
+        /*--------page4-------*/
+        .section4 {
+            width: 100%;
+            height: 828px;
+            background: url(img/20160818104618_KtRJn.png);
+            background-size: cover;
+            background-position: center;
+        }
+        .section4 .pg-text {
+            position: relative;
+            text-align: center;
+            top: 230px;
+        }
+        .section4 .login-page {
+            padding-left: 600px;
+        }
+        /*-------to top-----*/
+        .pg-to-top {
+            position: fixed;
+            top: 50%;
+            right: 51px;
+            width: 25px;
+            height: 25px;
+            margin-top: 73px;
+        }
+        /*-------circle------*/
+        .fp-circle {
+            position: fixed;
+            margin-top: -33px;
+            right: 52px;
+            top: 50%
+        }
+        .fp-circle span {
+            display: block;
+            margin: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #d8d8d8;
+        }
+        .fp-circle span:hover {
+            display: block;
+            margin: 7px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #d8d8d8;
+        }
+        .fp-circle .cur {
+            display: block;
+            margin-left: 5px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #ff7d7c;
+        }
+        .fp-circle .cur:hover {
+            margin-left: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="section section1">
+            <div class="tableCell">
+                <img src="img/20160819111217_jCEKk.png" alt="" class="next-page">
+                <div class="dt-header">
+                    <div class="hd-wrap">
+                        <a href="#" class="hd-l"></a>
+                        <div class="hd-r">
+                            <a href="#" class="login">登录</a>
+                            <div class="vline"></div>
+                            <a href="#" class="register">注册</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pg-text">
+                    <img src="img/20160818104651_h4i5u.png" alt="" class="pg-loge">
+                    <div class="pg-title">生活不仅是活着，还需要一点仪式感</div>
+                    <div class="pg-sub-title">／这种认真的生活态度，是感受幸福的条件／</div>
+                    <a href="#" class="login-page">
+                        <div class="login-btn">成为堆糖生活家 ></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="section section2">
+            <div class="tableCell">
+                <img src="img/20160819111217_jCEKk.png" alt="" class="next-page">
+                <div class="pg-cont-wrap">
+                    <div class="pg-mac-img"></div>
+                    <div class="pg-mac-cont">
+                        <div class="pg-line-before"></div>
+                        <div class="pg-title">研究生活细节&nbsp;&nbsp;分享美好时光</div>
+                        <div class="pg-content">
+                            在这里，你可以记录：
+                            <br>
+                            美食烹饪心得、美妆护肤评测；
+                            <br>
+                            影音书观后感、旅行风光游记；
+                            <br>
+                            住家收纳经验、手作心得教程；
+                            <br>
+                            绘画心路历程、铲屎官人日记......
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section3">
+            <div class="tableCell">
+                <img src="img/20160819111217_jCEKk.png" alt="" class="next-page">
+                <div class="pg-cont-wrap">
+                    <div class="pg-mac-img"></div>
+                    <div class="pg-mac-cont">
+                        <div class="pg-line-before"></div>
+                        <div class="pg-title">有更多人读懂你&nbsp;&nbsp;被堆糖官方推荐</div>
+                        <div class="pg-content">
+                            你可能收获：
+                            <br>
+                            糖人们的关注和喜爱；
+                            <br>
+                            一群志同道合的朋友；
+                            <br>
+                            被推荐至堆糖首页或官方微博微信；
+                            <br>
+                            被编辑发掘，成为达人的机会。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section4">
+            <div class="tableCell">
+                <div class="pg-text">
+                    <div class="pg-title">“寻找可以在平凡生活里发现不平凡的你们”</div>
+                    <div class="pg-sub-title">／成为堆糖生活家，开启写作功能，记录美好生活／</div>
+                    <a href="#" class="login-page">
+                        <div class="login-btn">成为堆糖生活家 ></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <img src="img/20160819182035_F4zHV.png" alt="" class="pg-to-top">
+    </div>
+    <div class="fp-circle">
+        <a href="#"><div class="cur"></div></a>
+        <a href="#"><span></span></a>
+        <a href="#"><span></span></a>
+        <a href="#"><span></span></a>
+    </div>
+    <script>
+        $('.next-page').click(function () {
+
+        });
+        $(".fp-circle span").click (function () {
+            nowpage=$(this).index();
+            $(".content").animate({"top":nowpage*-828+'px'}, 1000);
+//            $(".content section").eq(nowpage).removeClass('out').siblings().addClass('out');
+            $(".fp-circle span").eq(nowpage).addClass('cur').siblings().removeClass('cur')
+        });
+    </script>
+</body>
+</html>
